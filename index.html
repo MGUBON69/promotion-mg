@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MG Promotion - ข้อเสนอสุดพิเศษสำหรับคุณ</title>
+    <title>MG Promotion - MGM2</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -319,18 +319,27 @@
     </div>
 
     <script>
-        document.getElementById('mgPromoForm').addEventListener('submit', function(e) {
-            // ปล่อยให้เบราว์เซอร์ส่งฟอร์มตามธรรมชาติเข้า iframe ลับ (ห้ามใส่ e.preventDefault())
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.disabled = true;
-            submitBtn.innerText = 'กำลังส่งข้อมูลเข้าระบบ...';
-            
-            // หน่วงเวลา 1 วินาทีเพื่อให้ข้อมูลยิงเสร็จ แล้วค่อยสลับเป็นหน้าจอขอบคุณ
-            setTimeout(() => {
-                document.getElementById('mgPromoForm').classList.add('hidden');
-                document.getElementById('successMessage').classList.add('active');
-            }, 1000);
-        });
+document.getElementById('mgPromoForm').addEventListener('submit', function(e) {
+    const submitBtn = document.getElementById('submitBtn');
+    const theForm = document.getElementById('mgPromoForm');
+    
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'กำลังส่งข้อมูลเข้าระบบ...';
+    
+    // หน่วงเวลา 1 วินาทีเพื่อให้ฟอร์มยิงข้อมูลเข้า iframe สำเร็จ
+    setTimeout(() => {
+        // 🌟 จุดสำคัญ: สั่งล้างข้อมูลในฟอร์มให้เป็นกล่องว่างทันที เพื่อให้กรอกข้อมูลเดิมซ้ำได้ไม่ติดแคช
+        theForm.reset(); 
+        
+        // คืนค่าปุ่มกดให้กลับมาใช้งานได้ปกติ เผื่อมีการส่งครั้งต่อไป
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'รับสิทธิ์และข้อเสนอพิเศษ';
+        
+        // แสดงหน้าจอสำเร็จ
+        theForm.classList.add('hidden');
+        document.getElementById('successMessage').classList.add('active');
+    }, 1000);
+});
     </script>
 </body>
 </html>
