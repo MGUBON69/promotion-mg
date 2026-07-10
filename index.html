@@ -1,10 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MG Promotion - ข้อเสนอสุดพิเศษสำหรับคุณ</title>
-    <!-- นำเข้าฟอนต์ภาษาไทยยอดนิยม Kanit จาก Google Fonts เพื่อความพรีเมียม -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -259,22 +258,18 @@
 <body>
 
     <div class="container">
-        <!-- โลโก้สัญลักษณ์ MG -->
         <div class="logo-badge">MG</div>
 
-        <!-- หัวข้อหน้าเว็บ -->
         <div class="header-section">
             <h1>MG <span>EXCLUSIVE PROMOTION</span></h1>
             <p>สอบถามสิทธิพิเศษได้เลยค่ะ!</p>
         </div>
 
-        <!-- บล็อกการ์ดลงทะเบียน -->
         <div class="promo-card">
             
             <form id="mgPromoForm">
                 <h2>กรอกข้อมูลเพื่อรับสิทธิ์</h2>
                 
-                <!-- 1. รุ่นรถที่สนใจ -->
                 <div class="form-group">
                     <label for="carModel">รุ่นรถที่สนใจ <span>*</span></label>
                     <select id="carModel" required>
@@ -285,39 +280,33 @@
                         <option value="MGZS">MG ZS</option>
                         <option value="MG URBAN">MG URBAN EV</option>
                         <option value="MGS5EV">MGS5 EV</option>
-			<option value="MGIM5">MGIM5 EV</option>
-			<option value="MGIM6">MGIM6 EV</option>
-			<option value="MG MAXUS7">MG MAXUS7 EV</option>
-			<option value="MG MAXUS9">MG MAXUS9 EV</option>
-
+                        <option value="MGIM5">MGIM5 EV</option>
+                        <option value="MGIM6">MGIM6 EV</option>
+                        <option value="MG MAXUS7">MG MAXUS7 EV</option>
+                        <option value="MG MAXUS9">MG MAXUS9 EV</option>
                     </select>
                 </div>
 
-                <!-- 2. ชื่อเล่น -->
                 <div class="form-group">
                     <label for="nickname">ชื่อเล่นของคุณ <span>*</span></label>
                     <input type="text" id="nickname" required placeholder="ตัวอย่าง: คุณเอ">
                 </div>
 
-                <!-- 3. เบอร์โทรศัพท์ -->
                 <div class="form-group">
                     <label for="phoneNumber">เบอร์โทรศัพท์ <span>*</span></label>
                     <input type="tel" id="phoneNumber" required pattern="[0-9]{9,10}" placeholder="ตัวอย่าง: 0812345678">
                 </div>
 
-                <!-- 4. ID LINE -->
                 <div class="form-group">
                     <label for="lineId">ID LINE</label>
                     <input type="text" id="lineId" placeholder="ตัวอย่าง: line_id123 (ระบุเพื่อส่งรูปภาพเพิ่มเติม)">
                 </div>
 
-                <!-- ปุ่มส่งข้อมูล -->
                 <button type="submit" id="submitBtn" class="btn-submit">
                     รับสิทธิ์และข้อเสนอพิเศษ
                 </button>
             </form>
 
-            <!-- กล่องข้อความตอบกลับเมื่อส่งข้อมูลสำเร็จ -->
             <div id="successMessage" class="success-box">
                 <div class="success-icon">✓</div>
                 <h3>ลงทะเบียนเรียบร้อยแล้ว!</h3>
@@ -327,7 +316,6 @@
         </div>
     </div>
 
-    <!-- สคริปต์ส่งข้อมูลเบื้องหลังไปยัง Google Form -->
     <script>
         document.getElementById('mgPromoForm').addEventListener('submit', function(e) {
             e.preventDefault(); // ป้องกันไม่ให้เบราว์เซอร์รีเฟรชหน้าเว็บเอง
@@ -336,8 +324,8 @@
             submitBtn.disabled = true; // ล็อคปุ่มป้องกันการกดส่งซ้ำ
             submitBtn.innerText = 'กำลังส่งข้อมูลเข้าระบบ...';
 
-            // ⚠️ ส่วนสำคัญ 1: นำลิงก์ส่งข้อมูล Google Form ของคุณ (ที่เปลี่ยนคำลงท้ายเป็น /formResponse) มาใส่ที่นี่
-            const googleFormUrl = const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScKobKc9-1yzRAUgT1or1h3nga5XHzBAiFSOc6tNMp1LrGE1g/formResponse';
+            // 🛠️ แก้ไขเรียบร้อย: ลบข้อความที่ซ้อนกันออก ให้เหลือตัวแปรเดียวแบบถูกต้องเป๊ะๆ ครับ
+            const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScKobKc9-1yzRAUgT1or1h3nga5XHzBAiFSOc6tNMp1LrGE1g/formResponse';
 
             // ดึงข้อมูลที่ผู้ใช้งานกรอกในเว็บ
             const carModel = document.getElementById('carModel').value;
@@ -345,12 +333,12 @@
             const phoneNumber = document.getElementById('phoneNumber').value;
             const lineId = document.getElementById('lineId').value;
 
-            // ⚠️ ส่วนสำคัญ 2: นำ entry_ID ของแต่ละคำถามมาใส่แทนเลขสมมติด้านล่างนี้ให้ตรงจุดนะครับ
+            // นำ entry_ID ของแต่ละคำถามมาผูกข้อมูล
             const formData = new FormData();
-            formData.append('entry.1138646227', carModel);    // ตรงนี้เปลี่ยนเป็น ID ฟิลด์รุ่นรถที่สนใจ
-            formData.append('entry.383190011', nickname);    // ตรงนี้เปลี่ยนเป็น ID ฟิลด์ชื่อเล่น
-            formData.append('entry.142505465', phoneNumber); // ตรงนี้เปลี่ยนเป็น ID ฟิลด์เบอร์โทรศัพท์
-            formData.append('entry.1783230420', lineId);      // ตรงนี้เปลี่ยนเป็น ID ฟิลด์ ID LINE (ถ้ามี)
+            formData.append('entry.1138646227', carModel);    // ID ฟิลด์รุ่นรถที่สนใจ
+            formData.append('entry.383190011', nickname);     // ID ฟิลด์ชื่อเล่น
+            formData.append('entry.142505465', phoneNumber);  // ID ฟิลด์เบอร์โทรศัพท์
+            formData.append('entry.1783230420', lineId);      // ID ฟิลด์ ID LINE
 
             // ยิงข้อมูลส่งออกในลักษณะเบื้องหลัง (no-cors) ป้องกันการติดสิทธิ์ระบบเครือข่าย
             fetch(googleFormUrl, {
