@@ -261,8 +261,8 @@
         <div class="logo-badge">MG</div>
 
         <div class="header-section">
-            <h1>MG <span>EXCLUSIVE PROMOTION</span></h1>
-            <p>สอบถามสิทธิพิเศษได้เลยค่ะ!</p>
+            <h1>MG <span>EXCLUSIVE PROMO</span></h1>
+            <p>ลงทะเบียนรับสิทธิ์ทดลองขับและข้อเสนอสุดพิเศษเฉพาะสัปดาห์นี้เท่านั้น!</p>
         </div>
 
         <div class="promo-card">
@@ -324,7 +324,7 @@
             submitBtn.disabled = true; // ล็อคปุ่มป้องกันการกดส่งซ้ำ
             submitBtn.innerText = 'กำลังส่งข้อมูลเข้าระบบ...';
 
-            // 🛠️ แก้ไขเรียบร้อย: ลบข้อความที่ซ้อนกันออก ให้เหลือตัวแปรเดียวแบบถูกต้องเป๊ะๆ ครับ
+            // โครงสร้างลิงก์ส่งข้อมูลจริงของคุณชินอิจิ
             const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScKobKc9-1yzRAUgT1or1h3nga5XHzBAiFSOc6tNMp1LrGE1g/formResponse';
 
             // ดึงข้อมูลที่ผู้ใช้งานกรอกในเว็บ
@@ -333,12 +333,12 @@
             const phoneNumber = document.getElementById('phoneNumber').value;
             const lineId = document.getElementById('lineId').value;
 
-            // นำ entry_ID ของแต่ละคำถามมาผูกข้อมูล
+            // นำ entry_ID จริงทั้งหมดมาผูกข้อมูลเข้าคู่ระบบ
             const formData = new FormData();
             formData.append('entry.1138646227', carModel);    // ID ฟิลด์รุ่นรถที่สนใจ
             formData.append('entry.383190011', nickname);     // ID ฟิลด์ชื่อเล่น
-            formData.append('entry.142505465', phoneNumber);  // ID ฟิลด์เบอร์โทรศัพท์
-            formData.append('entry.1783230420', lineId);      // ID ฟิลด์ ID LINE
+            formData.append('entry.142505465', phoneNumber);  // ID ฟิลด์เบอร์โทรศัพท์จริงของคุณ
+            formData.append('entry.1783230420', lineId);      // ID ฟิลด์ ID LINE จริงของคุณ
 
             // ยิงข้อมูลส่งออกในลักษณะเบื้องหลัง (no-cors) ป้องกันการติดสิทธิ์ระบบเครือข่าย
             fetch(googleFormUrl, {
