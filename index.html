@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MG Promotion - ข้อเสนอสุดพิเศษสำหรับคุณ</title>
-    <!-- นำเข้าฟอนต์ภาษาไทยยอดนิยม Kanit จาก Google Fonts เพื่อความพรีเมียม -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -259,65 +258,57 @@
 <body>
 
     <div class="container">
-        <!-- โลโก้สัญลักษณ์ MG -->
         <div class="logo-badge">MG</div>
 
-        <!-- หัวข้อหน้าเว็บ -->
         <div class="header-section">
             <h1>MG <span>EXCLUSIVE PROMO</span></h1>
             <p>ลงทะเบียนรับสิทธิ์ทดลองขับและข้อเสนอสุดพิเศษเฉพาะสัปดาห์นี้เท่านั้น!</p>
         </div>
 
-        <!-- บล็อกการ์ดลงทะเบียน -->
         <div class="promo-card">
             
-            <form id="mgPromoForm">
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+            <form id="mgPromoForm" action="https://docs.google.com/forms/d/e/1FAIpQLScKobKc9-lyzRAUgTlOr1h3nga5XhzBAiFSOc6tNMp1LrGE1g/formResponse" method="POST" target="hidden_iframe">
                 <h2>กรอกข้อมูลเพื่อรับสิทธิ์</h2>
                 
-                <!-- 1. รุ่นรถที่สนใจ -->
                 <div class="form-group">
                     <label for="carModel">รุ่นรถที่สนใจ <span>*</span></label>
-                    <select id="carModel" required>
+                    <select id="carModel" name="entry.914069876" required>
                         <option value="" disabled selected>กรุณาเลือกรุ่นรถที่ต้องการ...</option>
-                        <option value="MG3">MG3 HYBRID+</option>
-                        <option value="MG4EV">MG42026 EV</option>
-                        <option value="MG5">MG5 PRO</option>
-                        <option value="MGZS">MG ZS</option>
-                        <option value="MG URBAN">MG URBAN EV</option>
-                        <option value="MGS5EV">MGS5 EV</option>
-			<option value="MGIM5">MGIM5 EV</option>
-			<option value="MGIM6">MGIM6 EV</option>
-			<option value="MG MAXUS7">MG MAXUS7 EV</option>
-			<option value="MG MAXUS9">MG MAXUS9 EV</option>
-
+                        <option value="MG3 HYBRID">MG3 HYBRID</option>
+                        <option value="MG42026 EV">MG42026 EV</option>
+                        <option value="MG5 PRO">MG5 PRO</option>
+                        <option value="MG ZS">MG ZS</option>
+                        <option value="MG URBAN EV">MG URBAN EV</option>
+                        <option value="MGS5 EV">MGS5 EV</option>
+                        <option value="MGIM5 EV">MGIM5 EV</option>
+                        <option value="MGIM6 EV">MGIM6 EV</option>
+                        <option value="MG MAXUS7 EV">MG MAXUS7 EV</option>
+                        <option value="MG MAXUS9 EV">MG MAXUS9 EV</option>
                     </select>
                 </div>
 
-                <!-- 2. ชื่อเล่น -->
                 <div class="form-group">
                     <label for="nickname">ชื่อเล่นของคุณ <span>*</span></label>
-                    <input type="text" id="nickname" required placeholder="ตัวอย่าง: คุณเอ">
+                    <input type="text" id="nickname" name="entry.1609197620" required placeholder="ตัวอย่าง: คุณเอ">
                 </div>
 
-                <!-- 3. เบอร์โทรศัพท์ -->
                 <div class="form-group">
                     <label for="phoneNumber">เบอร์โทรศัพท์ <span>*</span></label>
-                    <input type="tel" id="phoneNumber" required pattern="[0-9]{9,10}" placeholder="ตัวอย่าง: 0812345678">
+                    <input type="tel" id="phoneNumber" name="entry.983015044" required pattern="[0-9]{9,10}" placeholder="ตัวอย่าง: 0812345678">
                 </div>
 
-                <!-- 4. ID LINE -->
                 <div class="form-group">
                     <label for="lineId">ID LINE</label>
-                    <input type="text" id="lineId" placeholder="ตัวอย่าง: line_id123 (ระบุเพื่อส่งรูปภาพเพิ่มเติม)">
+                    <input type="text" id="lineId" name="entry.305779841" placeholder="ตัวอย่าง: line_id123 (ระบุเพื่อส่งรูปภาพเพิ่มเติม)">
                 </div>
 
-                <!-- ปุ่มส่งข้อมูล -->
                 <button type="submit" id="submitBtn" class="btn-submit">
                     รับสิทธิ์และข้อเสนอพิเศษ
                 </button>
             </form>
 
-            <!-- กล่องข้อความตอบกลับเมื่อส่งข้อมูลสำเร็จ -->
             <div id="successMessage" class="success-box">
                 <div class="success-icon">✓</div>
                 <h3>ลงทะเบียนเรียบร้อยแล้ว!</h3>
@@ -327,48 +318,18 @@
         </div>
     </div>
 
-    <!-- สคริปต์ส่งข้อมูลเบื้องหลังไปยัง Google Form -->
     <script>
         document.getElementById('mgPromoForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // ป้องกันไม่ให้เบราว์เซอร์รีเฟรชหน้าเว็บเอง
-
+            // ปล่อยให้เบราว์เซอร์ส่งฟอร์มตามธรรมชาติเข้า iframe ลับ (ห้ามใส่ e.preventDefault())
             const submitBtn = document.getElementById('submitBtn');
-            submitBtn.disabled = true; // ล็อคปุ่มป้องกันการกดส่งซ้ำ
+            submitBtn.disabled = true;
             submitBtn.innerText = 'กำลังส่งข้อมูลเข้าระบบ...';
-
-            // ⚠️ ส่วนสำคัญ 1: นำลิงก์ส่งข้อมูล Google Form ของคุณ (ที่เปลี่ยนคำลงท้ายเป็น /formResponse) มาใส่ที่นี่
-            const googleFormUrl = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID_HERE/formResponse';
-
-            // ดึงข้อมูลที่ผู้ใช้งานกรอกในเว็บ
-            const carModel = document.getElementById('carModel').value;
-            const nickname = document.getElementById('nickname').value;
-            const phoneNumber = document.getElementById('phoneNumber').value;
-            const lineId = document.getElementById('lineId').value;
-
-            // ⚠️ ส่วนสำคัญ 2: นำ entry_ID ของแต่ละคำถามมาใส่แทนเลขสมมติด้านล่างนี้ให้ตรงจุดนะครับ
-            const formData = new FormData();
-            formData.append('entry.1138646227', carModel);    // ตรงนี้เปลี่ยนเป็น ID ฟิลด์รุ่นรถที่สนใจ
-            formData.append('entry.383190011', nickname);    // ตรงนี้เปลี่ยนเป็น ID ฟิลด์ชื่อเล่น
-            formData.append('entry.333333333', phoneNumber); // ตรงนี้เปลี่ยนเป็น ID ฟิลด์เบอร์โทรศัพท์
-            formData.append('entry.444444444', lineId);      // ตรงนี้เปลี่ยนเป็น ID ฟิลด์ ID LINE (ถ้ามี)
-
-            // ยิงข้อมูลส่งออกในลักษณะเบื้องหลัง (no-cors) ป้องกันการติดสิทธิ์ระบบเครือข่าย
-            fetch(googleFormUrl, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: formData
-            })
-            .then(() => {
-                // ซ่อนฟอร์มลงทะเบียนแล้วแสดงหน้าตอบกลับสำเร็จที่มีเครื่องหมายถูกสีเขียวแบบสวยงาม
+            
+            // หน่วงเวลา 1 วินาทีเพื่อให้ข้อมูลยิงเสร็จ แล้วค่อยสลับเป็นหน้าจอขอบคุณ
+            setTimeout(() => {
                 document.getElementById('mgPromoForm').classList.add('hidden');
                 document.getElementById('successMessage').classList.add('active');
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                alert('เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาตรวจสอบอินเทอร์เน็ตหรือลองใหม่อีกครั้ง');
-                submitBtn.disabled = false;
-                submitBtn.innerText = 'รับสิทธิ์และข้อเสนอพิเศษ';
-            });
+            }, 1000);
         });
     </script>
 </body>
