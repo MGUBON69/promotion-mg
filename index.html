@@ -347,10 +347,10 @@
 
             // ⚠️ ส่วนสำคัญ 2: นำ entry_ID ของแต่ละคำถามมาใส่แทนเลขสมมติด้านล่างนี้ให้ตรงจุดนะครับ
             const formData = new FormData();
-            formData.append('entry.111111111', carModel);    // ตรงนี้เปลี่ยนเป็น ID ฟิลด์รุ่นรถที่สนใจ
-            formData.append('entry.222222222', nickname);    // ตรงนี้เปลี่ยนเป็น ID ฟิลด์ชื่อเล่น
-            formData.append('entry.333333333', phoneNumber); // ตรงนี้เปลี่ยนเป็น ID ฟิลด์เบอร์โทรศัพท์
-            formData.append('entry.444444444', lineId);      // ตรงนี้เปลี่ยนเป็น ID ฟิลด์ ID LINE (ถ้ามี)
+            formData.append('entry.1138646227', carModel);    // ตรงนี้เปลี่ยนเป็น ID ฟิลด์รุ่นรถที่สนใจ
+            formData.append('entry.383190011', nickname);    // ตรงนี้เปลี่ยนเป็น ID ฟิลด์ชื่อเล่น
+            formData.append('entry.142505465', phoneNumber); // ตรงนี้เปลี่ยนเป็น ID ฟิลด์เบอร์โทรศัพท์
+            formData.append('entry.1783230420', lineId);      // ตรงนี้เปลี่ยนเป็น ID ฟิลด์ ID LINE (ถ้ามี)
 
             // ยิงข้อมูลส่งออกในลักษณะเบื้องหลัง (no-cors) ป้องกันการติดสิทธิ์ระบบเครือข่าย
             fetch(googleFormUrl, {
