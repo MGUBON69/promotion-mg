@@ -1,0 +1,375 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MG Promotion - ข้อเสนอสุดพิเศษสำหรับคุณ</title>
+    <!-- นำเข้าฟอนต์ภาษาไทยยอดนิยม Kanit จาก Google Fonts เพื่อความพรีเมียม -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* กำหนดตัวแปรสีหลักของแบรนด์ MG */
+        :root {
+            --mg-red: #e31837;          /* สีแดงสปอร์ตของ MG */
+            --mg-red-hover: #b81027;    /* สีแดงเข้มตอนปุ่มถูกชี้ */
+            --bg-dark: #0f0f11;         /* สีพื้นหลังดำชาร์โคล */
+            --card-bg: #1a1a1e;         /* สีพื้นหลังกล่องฟอร์ม */
+            --input-bg: #26262b;        /* สีพื้นหลังช่องกรอกข้อมูล */
+            --border-color: #3f3f46;    /* สีเส้นขอบ */
+            --text-primary: #ffffff;    /* สีตัวอักษรหลัก */
+            --text-secondary: #a1a1aa;  /* สีตัวอักษรรอง */
+        }
+
+        /* รีเซ็ตสไตล์เริ่มต้นของบราวเซอร์ */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: radial-gradient(circle at center, #1f1f24 0%, var(--bg-dark) 100%);
+            color: var(--text-primary);
+            font-family: 'Kanit', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* สไตล์ของคอนเทนเนอร์หลัก */
+        .container {
+            width: 100%;
+            max-width: 480px;
+            margin: 40px auto;
+        }
+
+        /* โลโก้ MG แบบมินิมอลแต่ดูหรูหรา */
+        .logo-badge {
+            width: 70px;
+            height: 70px;
+            border: 3px solid var(--mg-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0 auto 25px auto;
+            color: var(--text-primary);
+            background-color: var(--bg-dark);
+            box-shadow: 0 0 20px rgba(227, 24, 55, 0.4);
+            letter-spacing: -1px;
+        }
+
+        /* ส่วนหัวเรื่องหลัก */
+        .header-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header-section h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .header-section h1 span {
+            color: var(--mg-red);
+            text-shadow: 0 0 10px rgba(227, 24, 55, 0.3);
+        }
+
+        .header-section p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* ตัวการ์ดฟอร์มลงทะเบียน */
+        .promo-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* แถบแสงสีแดงด้านบนสุดของการ์ด */
+        .promo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--mg-red) 0%, #ff5252 100%);
+        }
+
+        .promo-card h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--text-primary);
+        }
+
+        /* สไตล์ฟิลด์แต่ละช่อง */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group label span {
+            color: var(--mg-red);
+        }
+
+        /* ออกแบบ Input และ Select ใหม่ */
+        input, select {
+            width: 100%;
+            padding: 14px 16px;
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: 'Kanit', sans-serif;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        /* ปรับดีไซน์ Dropdown ของบราวเซอร์ */
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 40px;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--mg-red);
+            box-shadow: 0 0 0 3px rgba(227, 24, 55, 0.25);
+            background-color: #2e2e35;
+        }
+
+        input::placeholder {
+            color: #71717a;
+        }
+
+        /* สไตล์ปุ่มส่งข้อมูลแบบหรูหรา */
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--mg-red);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Kanit', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(227, 24, 55, 0.4);
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--mg-red-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(227, 24, 55, 0.6);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        .btn-submit:disabled {
+            background-color: #3f3f46;
+            color: var(--text-secondary);
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        /* หน้าจอขอบคุณหลังจากลงทะเบียนสำเร็จ */
+        .success-box {
+            display: none;
+            text-align: center;
+            padding: 30px 10px;
+        }
+
+        .success-box.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: #10b981;
+            margin-bottom: 20px;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .success-box h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .success-box p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* อนิเมชันเสริมความลื่นไหล */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* ปรับสไตล์ให้ซ่อนฟอร์มเมื่อส่งสำเร็จ */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- โลโก้สัญลักษณ์ MG -->
+        <div class="logo-badge">MG</div>
+
+        <!-- หัวข้อหน้าเว็บ -->
+        <div class="header-section">
+            <h1>MG <span>EXCLUSIVE PROMO</span></h1>
+            <p>ลงทะเบียนรับสิทธิ์ทดลองขับและข้อเสนอสุดพิเศษเฉพาะสัปดาห์นี้เท่านั้น!</p>
+        </div>
+
+        <!-- บล็อกการ์ดลงทะเบียน -->
+        <div class="promo-card">
+            
+            <form id="mgPromoForm">
+                <h2>กรอกข้อมูลเพื่อรับสิทธิ์</h2>
+                
+                <!-- 1. รุ่นรถที่สนใจ -->
+                <div class="form-group">
+                    <label for="carModel">รุ่นรถที่สนใจ <span>*</span></label>
+                    <select id="carModel" required>
+                        <option value="" disabled selected>กรุณาเลือกรุ่นรถที่ต้องการ...</option>
+                        <option value="MG3">MG3 HYBRID+</option>
+                        <option value="MG4EV">MG42026 EV</option>
+                        <option value="MG5">MG5 PRO</option>
+                        <option value="MGZS">MG ZS</option>
+                        <option value="MG URBAN">MG URBAN EV</option>
+                        <option value="MGS5EV">MGS5 EV</option>
+			<option value="MGIM5">MGIM5 EV</option>
+			<option value="MGIM6">MGIM6 EV</option>
+			<option value="MG MAXUS7">MG MAXUS7 EV</option>
+			<option value="MG MAXUS9">MG MAXUS9 EV</option>
+
+                    </select>
+                </div>
+
+                <!-- 2. ชื่อเล่น -->
+                <div class="form-group">
+                    <label for="nickname">ชื่อเล่นของคุณ <span>*</span></label>
+                    <input type="text" id="nickname" required placeholder="ตัวอย่าง: คุณเอ">
+                </div>
+
+                <!-- 3. เบอร์โทรศัพท์ -->
+                <div class="form-group">
+                    <label for="phoneNumber">เบอร์โทรศัพท์ <span>*</span></label>
+                    <input type="tel" id="phoneNumber" required pattern="[0-9]{9,10}" placeholder="ตัวอย่าง: 0812345678">
+                </div>
+
+                <!-- 4. ID LINE -->
+                <div class="form-group">
+                    <label for="lineId">ID LINE</label>
+                    <input type="text" id="lineId" placeholder="ตัวอย่าง: line_id123 (ระบุเพื่อส่งรูปภาพเพิ่มเติม)">
+                </div>
+
+                <!-- ปุ่มส่งข้อมูล -->
+                <button type="submit" id="submitBtn" class="btn-submit">
+                    รับสิทธิ์และข้อเสนอพิเศษ
+                </button>
+            </form>
+
+            <!-- กล่องข้อความตอบกลับเมื่อส่งข้อมูลสำเร็จ -->
+            <div id="successMessage" class="success-box">
+                <div class="success-icon">✓</div>
+                <h3>ลงทะเบียนเรียบร้อยแล้ว!</h3>
+                <p>เราได้รับข้อมูลของคุณเรียบร้อยแล้ว<br>เจ้าหน้าที่ที่ปรึกษาการขายจะติดต่อกลับเพื่อแจ้งข้อเสนอโดยเร็วที่สุดครับ</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- สคริปต์ส่งข้อมูลเบื้องหลังไปยัง Google Form -->
+    <script>
+        document.getElementById('mgPromoForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // ป้องกันไม่ให้เบราว์เซอร์รีเฟรชหน้าเว็บเอง
+
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true; // ล็อคปุ่มป้องกันการกดส่งซ้ำ
+            submitBtn.innerText = 'กำลังส่งข้อมูลเข้าระบบ...';
+
+            // ⚠️ ส่วนสำคัญ 1: นำลิงก์ส่งข้อมูล Google Form ของคุณ (ที่เปลี่ยนคำลงท้ายเป็น /formResponse) มาใส่ที่นี่
+            const googleFormUrl = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID_HERE/formResponse';
+
+            // ดึงข้อมูลที่ผู้ใช้งานกรอกในเว็บ
+            const carModel = document.getElementById('carModel').value;
+            const nickname = document.getElementById('nickname').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const lineId = document.getElementById('lineId').value;
+
+            // ⚠️ ส่วนสำคัญ 2: นำ entry_ID ของแต่ละคำถามมาใส่แทนเลขสมมติด้านล่างนี้ให้ตรงจุดนะครับ
+            const formData = new FormData();
+            formData.append('entry.111111111', carModel);    // ตรงนี้เปลี่ยนเป็น ID ฟิลด์รุ่นรถที่สนใจ
+            formData.append('entry.222222222', nickname);    // ตรงนี้เปลี่ยนเป็น ID ฟิลด์ชื่อเล่น
+            formData.append('entry.333333333', phoneNumber); // ตรงนี้เปลี่ยนเป็น ID ฟิลด์เบอร์โทรศัพท์
+            formData.append('entry.444444444', lineId);      // ตรงนี้เปลี่ยนเป็น ID ฟิลด์ ID LINE (ถ้ามี)
+
+            // ยิงข้อมูลส่งออกในลักษณะเบื้องหลัง (no-cors) ป้องกันการติดสิทธิ์ระบบเครือข่าย
+            fetch(googleFormUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            })
+            .then(() => {
+                // ซ่อนฟอร์มลงทะเบียนแล้วแสดงหน้าตอบกลับสำเร็จที่มีเครื่องหมายถูกสีเขียวแบบสวยงาม
+                document.getElementById('mgPromoForm').classList.add('hidden');
+                document.getElementById('successMessage').classList.add('active');
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาตรวจสอบอินเทอร์เน็ตหรือลองใหม่อีกครั้ง');
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'รับสิทธิ์และข้อเสนอพิเศษ';
+            });
+        });
+    </script>
+</body>
+</html>
