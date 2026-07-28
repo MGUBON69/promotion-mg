@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promotion - MGM2</title>
+    <title>Promotion - M2 MOTORSPORT EVOLUTION</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* กำหนดตัวแปรสีหลักของแบรนด์ MG */
+        /* กำหนดตัวแปรสีหลักสไตล์ M2 Motorsport Evolution (Dark & Cyan Neon) */
         :root {
-            --mg-red: #e31837;          /* สีแดงสปอร์ตของ MG */
-            --mg-red-hover: #b81027;    /* สีแดงเข้มตอนปุ่มถูกชี้ */
-            --bg-dark: #0f0f11;         /* สีพื้นหลังดำชาร์โคล */
-            --card-bg: #1a1a1e;         /* สีพื้นหลังกล่องฟอร์ม */
-            --input-bg: #26262b;        /* สีพื้นหลังช่องกรอกข้อมูล */
-            --border-color: #3f3f46;    /* สีเส้นขอบ */
-            --text-primary: #ffffff;    /* สีตัวอักษรหลัก */
-            --text-secondary: #a1a1aa;  /* สีตัวอักษรรอง */
+            --neon-cyan: #00f0ff;      /* สีฟ้าเทอร์คอยซ์นีออนเด่น */
+            --neon-cyan-hover: #00b8c4;/* สีฟ้าเข้มตอนปุ่มถูกชี้ */
+            --bg-dark: #0b0f19;        /* สีพื้นหลังมืดสนิทสไตล์แอป */
+            --card-bg: #111827;        /* สีพื้นหลังการ์ด/กล่อง */
+            --input-bg: #1f2937;       /* สีพื้นหลังช่องกรอกข้อมูล */
+            --border-color: #1e3a4c;   /* สีเส้นขอบอมฟ้าเข้ม */
+            --text-primary: #ffffff;   /* สีตัวอักษรหลัก */
+            --text-secondary: #9ca3af; /* สีตัวอักษรรอง */
         }
 
-        /* รีเซ็ตสไตล์เริ่มต้นของบราวเซอร์ */
+        /* รีเซ็ตสไตล์เริ่มต้น */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -29,7 +29,7 @@
         }
 
         body {
-            background: radial-gradient(circle at center, #1f1f24 0%, var(--bg-dark) 100%);
+            background: radial-gradient(circle at center, #111e30 0%, var(--bg-dark) 100%);
             color: var(--text-primary);
             font-family: 'Kanit', sans-serif;
             min-height: 100vh;
@@ -40,48 +40,49 @@
             padding: 20px;
         }
 
-        /* สไตล์ของคอนเทนเนอร์หลัก */
+        /* คอนเทนเนอร์หลัก */
         .container {
             width: 100%;
             max-width: 480px;
             margin: 40px auto;
         }
 
-        /* โลโก้ MG แบบมินิมอลแต่ดูหรูหรา */
+        /* โลโก้ MG สไตล์นีออนฟ้า M2 */
         .logo-badge {
-            width: 70px;
-            height: 70px;
-            border: 3px solid var(--mg-red);
-            border-radius: 50%;
+            width: 75px;
+            height: 75px;
+            border: 2px solid var(--neon-cyan);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
             font-weight: 800;
-            margin: 0 auto 25px auto;
-            color: var(--text-primary);
-            background-color: var(--bg-dark);
-            box-shadow: 0 0 20px rgba(227, 24, 55, 0.4);
+            margin: 0 auto 20px auto;
+            color: var(--neon-cyan);
+            background-color: var(--card-bg);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), inset 0 0 10px rgba(0, 240, 255, 0.2);
             letter-spacing: -1px;
         }
 
         /* ส่วนหัวเรื่องหลัก */
         .header-section {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .header-section h1 {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             letter-spacing: 1px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-transform: uppercase;
+            color: var(--text-primary);
         }
 
         .header-section h1 span {
-            color: var(--mg-red);
-            text-shadow: 0 0 10px rgba(227, 24, 55, 0.3);
+            color: var(--neon-cyan);
+            text-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
         }
 
         .header-section p {
@@ -96,25 +97,26 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 20px;
-            padding: 40px 30px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            padding: 35px 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 240, 255, 0.05);
             position: relative;
             overflow: hidden;
         }
 
-        /* แถบแสงสีแดงด้านบนสุดของการ์ด */
+        /* แถบแสงสีฟ้านีออนด้านบนสุดของการ์ด */
         .promo-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--mg-red) 0%, #ff5252 100%);
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+            box-shadow: 0 0 10px var(--neon-cyan);
         }
 
         .promo-card h2 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 600;
             text-align: center;
             margin-bottom: 25px;
@@ -135,10 +137,10 @@
         }
 
         .form-group label span {
-            color: var(--mg-red);
+            color: var(--neon-cyan);
         }
 
-        /* ออกแบบ Input และ Select ใหม่ */
+        /* ออกแบบ Input และ Select */
         input, select {
             width: 100%;
             padding: 14px 16px;
@@ -152,10 +154,10 @@
             box-sizing: border-box;
         }
 
-        /* ปรับดีไซน์ Dropdown ของบราวเซอร์ */
+        /* ปรับดีไซน์ Dropdown ให้เข้ากับธีมฟ้า */
         select {
             appearance: none;
-            background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+            background-image: url("data:image/svg+xml;utf8,<svg fill='%2300f0ff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
             background-repeat: no-repeat;
             background-position: right 14px center;
             padding-right: 40px;
@@ -163,36 +165,35 @@
 
         input:focus, select:focus {
             outline: none;
-            border-color: var(--mg-red);
-            box-shadow: 0 0 0 3px rgba(227, 24, 55, 0.25);
-            background-color: #2e2e35;
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+            background-color: #172033;
         }
 
         input::placeholder {
-            color: #71717a;
+            color: #4b5563;
         }
 
-        /* สไตล์ปุ่มส่งข้อมูลแบบหรูหรา */
+        /* สไตล์ปุ่มส่งข้อมูลเรืองแสง */
         .btn-submit {
             width: 100%;
             padding: 16px;
-            background-color: var(--mg-red);
-            color: white;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-cyan-hover));
+            color: #0b0f19;
             border: none;
             border-radius: 12px;
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 700;
             font-family: 'Kanit', sans-serif;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(227, 24, 55, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.4);
             margin-top: 10px;
         }
 
         .btn-submit:hover {
-            background-color: var(--mg-red-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(227, 24, 55, 0.6);
+            box-shadow: 0 6px 20px rgba(0, 240, 255, 0.7);
         }
 
         .btn-submit:active {
@@ -200,7 +201,7 @@
         }
 
         .btn-submit:disabled {
-            background-color: #3f3f46;
+            background-color: #374151;
             color: var(--text-secondary);
             cursor: not-allowed;
             box-shadow: none;
@@ -220,16 +221,18 @@
         }
 
         .success-icon {
-            font-size: 4rem;
-            color: #10b981;
+            font-size: 3.5rem;
+            color: var(--neon-cyan);
             margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
             animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .success-box h3 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 10px;
+            color: var(--text-primary);
         }
 
         .success-box p {
@@ -238,7 +241,7 @@
             line-height: 1.6;
         }
 
-        /* อนิเมชันเสริมความลื่นไหล */
+        /* อนิเมชัน */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -249,7 +252,6 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
-        /* ปรับสไตล์ให้ซ่อนฟอร์มเมื่อส่งสำเร็จ */
         .hidden {
             display: none !important;
         }
@@ -261,8 +263,8 @@
         <div class="logo-badge">MG</div>
 
         <div class="header-section">
-            <h1>M2 <span>EXCLUSIVE PROMOTION</span></h1>
-            <p>ลงทะเบียนเพื่อสอบถามโปรโมชั่นรถใหม่ได้เลยค่ะ!</p>
+            <h1>M2 <span>MOTORSPORT</span></h1>
+            <p>ลงทะเบียนรับข้อเสนอพิเศษสุดเอ็กซ์คลูซีฟกับเราได้เลยค่ะคุณชินอิจิ!</p>
         </div>
 
         <div class="promo-card">
@@ -311,7 +313,7 @@
 
             <div id="successMessage" class="success-box">
                 <div class="success-icon">✓</div>
-                <h3>ลงทะเบียนเรียบร้อยแล้ว!</h3>
+                <h3>ลงทะเบียนเรียบร้อยแล้วค่ะ!</h3>
                 <p>เราได้รับข้อมูลของคุณเรียบร้อยแล้ว<br>ที่ปรึกษาการขายจะติดต่อกลับเพื่อแจ้งข้อเสนอโดยเร็วที่สุดค่ะ</p>
             </div>
 
@@ -326,16 +328,11 @@ document.getElementById('mgPromoForm').addEventListener('submit', function(e) {
     submitBtn.disabled = true;
     submitBtn.innerText = 'กำลังส่งข้อมูลเข้าระบบ...';
     
-    // หน่วงเวลา 1 วินาทีเพื่อให้ฟอร์มยิงข้อมูลเข้า iframe สำเร็จ
     setTimeout(() => {
-        // 🌟 จุดสำคัญ: สั่งล้างข้อมูลในฟอร์มให้เป็นกล่องว่างทันที เพื่อให้กรอกข้อมูลเดิมซ้ำได้ไม่ติดแคช
         theForm.reset(); 
-        
-        // คืนค่าปุ่มกดให้กลับมาใช้งานได้ปกติ เผื่อมีการส่งครั้งต่อไป
         submitBtn.disabled = false;
         submitBtn.innerText = 'รับสิทธิ์และข้อเสนอพิเศษ';
         
-        // แสดงหน้าจอสำเร็จ
         theForm.classList.add('hidden');
         document.getElementById('successMessage').classList.add('active');
     }, 1000);
