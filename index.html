@@ -5,25 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promotion - M2 MOTORSPORT EVOLUTION</title>
     
-    <!-- แก้ไข: เปลี่ยนจาก Kanit เป็น Prompt ให้ตรงกับโค้ดแรก -->
+    <!-- ฟอนต์ Prompt -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     
     <style>
-        /* กำหนดตัวแปรสีหลักสไตล์ M2 Motorsport Evolution (Dark & Cyan Neon) */
+        /* ธีมสีใหม่: ขาว-น้ำเงิน (Clean & Professional) */
         :root {
-            --neon-cyan: #00f0ff;      /* สีฟ้าเทอร์คอยซ์นีออนเด่น */
-            --neon-cyan-hover: #00b8c4;/* สีฟ้าเข้มตอนปุ่มถูกชี้ */
-            --bg-dark: #0b0f19;        /* สีพื้นหลังมืดสนิทสไตล์แอป */
-            --card-bg: #111827;        /* สีพื้นหลังการ์ด/กล่อง */
-            --input-bg: #1f2937;       /* สีพื้นหลังช่องกรอกข้อมูล */
-            --border-color: #1e3a4c;   /* สีเส้นขอบอมฟ้าเข้ม */
-            --text-primary: #ffffff;   /* สีตัวอักษรหลัก */
-            --text-secondary: #9ca3af; /* สีตัวอักษรรอง */
+            --primary-blue: #007bff;       /* สีน้ำเงินหลัก (คล้ายรูป) */
+            --primary-hover: #0056b3;      /* สีน้ำเงินเข้มตอน Hover */
+            --bg-body: #f3f6f9;            /* พื้นหลังเว็บสีเทาอ่อน */
+            --card-bg: #ffffff;            /* พื้นหลังการ์ดสีขาว */
+            --input-bg: #ffffff;           /* พื้นหลังช่องกรอก */
+            --border-color: #dee2e6;       /* เส้นขอบสีเทาอ่อน */
+            --text-main: #212529;          /* ตัวหนังสือสีดำเข้ม */
+            --text-muted: #6c757d;         /* ตัวหนังสือสีเทารอง */
         }
 
-        /* รีเซ็ตสไตล์เริ่มต้น */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -31,9 +30,8 @@
         }
 
         body {
-            background: radial-gradient(circle at center, #111e30 0%, var(--bg-dark) 100%);
-            color: var(--text-primary);
-            /* แก้ไข: เปลี่ยนฟอนต์เป็น Prompt */
+            background-color: var(--bg-body);
+            color: var(--text-main);
             font-family: 'Prompt', sans-serif;
             min-height: 100vh;
             display: flex;
@@ -43,125 +41,99 @@
             padding: 20px;
         }
 
-        /* คอนเทนเนอร์หลัก */
         .container {
             width: 100%;
             max-width: 480px;
-            margin: 40px auto;
+            margin: 20px auto;
         }
 
-        /* โลโก้ MG สไตล์นีออนฟ้า M2 */
+        /* โลโก้ MG สี่เหลี่ยมมน พื้นดำ ตัวขาว */
         .logo-badge {
-            width: 75px;
-            height: 75px;
-            border: 2px solid var(--neon-cyan);
-            border-radius: 16px;
+            width: 80px;
+            height: 80px;
+            background-color: #000000;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 800;
-            margin: 0 auto 20px auto;
-            color: var(--neon-cyan);
-            background-color: var(--card-bg);
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), inset 0 0 10px rgba(0, 240, 255, 0.2);
+            margin: 0 auto 15px auto;
+            color: #ffffff;
             letter-spacing: -1px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* ส่วนหัวเรื่องหลัก */
         .header-section {
             text-align: center;
             margin-bottom: 25px;
         }
 
         .header-section h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+            color: var(--text-main);
             text-transform: uppercase;
-            color: var(--text-primary);
-        }
-
-        .header-section h1 span {
-            color: var(--neon-cyan);
-            text-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
         }
 
         .header-section p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
             font-weight: 300;
         }
 
-        /* ตัวการ์ดฟอร์มลงทะเบียน */
+        /* การ์ดฟอร์มสีขาว เงาบางๆ */
         .promo-card {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 35px 25px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 240, 255, 0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* แถบแสงสีฟ้านีออนด้านบนสุดของการ์ด */
-        .promo-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
-            box-shadow: 0 0 10px var(--neon-cyan);
+            border-radius: 24px; /* มุมโค้งมากตามรูป */
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* เงานุ่มนวล */
+            border: 1px solid rgba(0,0,0,0.02);
         }
 
         .promo-card h2 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
             text-align: center;
             margin-bottom: 25px;
-            color: var(--text-primary);
+            color: var(--text-main);
         }
 
-        /* สไตล์ฟิลด์แต่ละช่อง */
         .form-group {
             margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
+            font-size: 0.95rem;
+            color: var(--text-main);
             margin-bottom: 8px;
             font-weight: 500;
         }
 
         .form-group label span {
-            color: var(--neon-cyan);
+            color: #dc3545; /* สีแดงสำหรับเครื่องหมาย * */
         }
 
-        /* ออกแบบ Input และ Select */
         input, select {
             width: 100%;
             padding: 14px 16px;
             background-color: var(--input-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            color: var(--text-primary);
+            color: var(--text-main);
             font-size: 1rem;
-            /* แก้ไข: เปลี่ยนฟอนต์เป็น Prompt */
             font-family: 'Prompt', sans-serif;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             box-sizing: border-box;
         }
 
-        /* ปรับดีไซน์ Dropdown ให้เข้ากับธีมฟ้า */
         select {
             appearance: none;
-            background-image: url("data:image/svg+xml;utf8,<svg fill='%2300f0ff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+            background-image: url("data:image/svg+xml;utf8,<svg fill='%236c757d' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
             background-repeat: no-repeat;
             background-position: right 14px center;
             padding-right: 40px;
@@ -169,51 +141,46 @@
 
         input:focus, select:focus {
             outline: none;
-            border-color: var(--neon-cyan);
-            box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
-            background-color: #172033;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15); /* Glow สีฟ้าอ่อน */
         }
 
         input::placeholder {
-            color: #4b5563;
+            color: #adb5bd;
         }
 
-        /* สไตล์ปุ่มส่งข้อมูลเรืองแสง */
+        /* ปุ่มกดส่งแบบเดิม (สีน้ำเงินเต็มบาน) */
         .btn-submit {
             width: 100%;
             padding: 16px;
-            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-cyan-hover));
-            color: #0b0f19;
+            background-color: var(--primary-blue);
+            color: #ffffff;
             border: none;
             border-radius: 12px;
             font-size: 1.1rem;
-            font-weight: 700;
-            /* แก้ไข: เปลี่ยนฟอนต์เป็น Prompt */
+            font-weight: 600;
             font-family: 'Prompt', sans-serif;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.4);
+            transition: background-color 0.3s ease;
             margin-top: 10px;
+            box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
         }
 
         .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 240, 255, 0.7);
+            background-color: var(--primary-hover);
         }
 
         .btn-submit:active {
-            transform: translateY(0);
+            transform: scale(0.98);
         }
 
         .btn-submit:disabled {
-            background-color: #374151;
-            color: var(--text-secondary);
+            background-color: #a0c4e8;
             cursor: not-allowed;
-            box-shadow: none;
             transform: none;
         }
 
-        /* หน้าจอขอบคุณหลังจากลงทะเบียนสำเร็จ */
+        /* ส่วนแสดงผลสำเร็จ */
         .success-box {
             display: none;
             text-align: center;
@@ -227,34 +194,26 @@
 
         .success-icon {
             font-size: 3.5rem;
-            color: var(--neon-cyan);
+            color: var(--primary-blue);
             margin-bottom: 20px;
-            text-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
-            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .success-box h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 10px;
-            color: var(--text-primary);
+            color: var(--text-main);
         }
 
         .success-box p {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             font-size: 0.95rem;
             line-height: 1.6;
         }
 
-        /* อนิเมชัน */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes popIn {
-            0% { transform: scale(0); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
         }
 
         .hidden {
@@ -265,10 +224,11 @@
 <body>
 
     <div class="container">
+        <!-- โลโก้ MG -->
         <div class="logo-badge">MG</div>
 
         <div class="header-section">
-            <h1>M2 <span>MOTORSPORT</span></h1>
+            <h1>M2 MOTORSPORT</h1>
             <p>ลงทะเบียนรับข้อเสนอพิเศษสุดเอ็กซ์คลูซีฟกับเราได้เลยค่ะ</p>
         </div>
 
@@ -276,6 +236,7 @@
             
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
+            <!-- ฟอร์มเดิม ไม่มีการแก้ชื่อฟิลด์หรือ ID -->
             <form id="mgPromoForm" action="https://docs.google.com/forms/d/e/1FAIpQLScKobKc9-lyzRAUgTlOr1h3nga5XhzBAiFSOc6tNMp1LrGE1g/formResponse" method="POST" target="hidden_iframe">
                 <h2>กรอกข้อมูลเพื่อติดต่อทีมขาย</h2>
                 
@@ -311,6 +272,7 @@
                     <input type="text" id="lineId" name="entry.305779841" placeholder="(ใช้ส่งข้อมูลเพิ่มเติม)">
                 </div>
 
+                <!-- ปุ่มกดส่งแบบเดิม -->
                 <button type="submit" id="submitBtn" class="btn-submit">
                     รับสิทธิ์และข้อเสนอพิเศษ
                 </button>
@@ -336,7 +298,8 @@ document.getElementById('mgPromoForm').addEventListener('submit', function(e) {
     setTimeout(() => {
         theForm.reset(); 
         submitBtn.disabled = false;
-        submitBtn.innerText = 'รับสิทธิ์และข้อเสนอพิเศษ';
+        // คืนค่าข้อความปุ่มเป็นแบบเดิม
+        submitBtn.innerText = 'รับสิทธิ์และข้อเสนอพิเศษ'; 
         
         theForm.classList.add('hidden');
         document.getElementById('successMessage').classList.add('active');
